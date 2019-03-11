@@ -7,8 +7,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
-        for (int i = 1; i <= 255; i++) {
+        Utilities.welcomeMsg("Hi, Welcome to FizzBuzz console!");
+        int maxNumber = Utilities.requestInt("Please enter a maximum number ot print to :)");
+        for (int i = 1; i <= maxNumber; i++) {
 
             List <String> store = new ArrayList<>();
 
@@ -51,7 +52,7 @@ public class Main {
 
         }
     }
-    
+
     private static int indexOfItemWithSubString(List <String> list, String criteria) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).contains(criteria)) {
