@@ -7,11 +7,23 @@ import java.util.stream.Stream;
 
 public class FizzBuzzBangStream {
 
-    public static Stream <String> create() {
-        return Stream.iterate(1, n -> n + 1).map(FizzBuzzBangStream::convert);
+    private int requestModulus;
+    private String requestRule;
+    private String requestWord;
+    private String requestStartingChar;
+
+    public FizzBuzzBangStream(int requestModulus, String requestRule, String requestWord, String requestStartingChar) {
+        this.requestModulus = requestModulus;
+        this.requestRule = requestRule;
+        this.requestWord = requestWord;
+        this.requestStartingChar = requestStartingChar;
     }
 
-    private static String convert (int currentNumber) {
+    public Stream <String> create() {
+        return Stream.iterate(1, n -> n + 1).map(this::convert);
+    }
+
+    private String convert (int currentNumber) {
 
         List<String> store = new ArrayList<>();
 
@@ -43,6 +55,28 @@ public class FizzBuzzBangStream {
 
         if (currentNumber % 17 == 0) {
             Collections.reverse(store);
+        }
+
+        if (currentNumber % requestModulus == 0) {
+            switch (requestRule.toLowerCase()) {
+                case "add text":
+                    store.add(requestWord);
+                    break;
+                case "replace all text":
+                    store.clear();
+                    store.add(requestWord);
+                    break;
+                case "reverse":
+                    Collections.reverse(store);
+                    break;
+                case "insert":
+                    int indexOfItemContainingB = indexOfItemWithSubString(store,requestStartingChar);
+                    if (indexOfItemContainingB != -1) {
+                        store.add(indexOfItemContainingB, requestWord);
+                    } else {
+                        store.add(requestWord);
+                    }
+            }
         }
 
         if (store.size() == 0) {
