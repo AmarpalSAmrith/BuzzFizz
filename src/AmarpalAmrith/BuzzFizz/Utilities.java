@@ -27,7 +27,12 @@ public class Utilities {
         Scanner scanner = new Scanner(System.in);
         System.out.println(msg);
         System.out.print(">");
-        return scanner.next();
+        return scanner.nextLine();
+    }
+
+    public static boolean requestBoolean(String msg) {
+        String requestBoolean = requestString(msg);
+        return Boolean.parseBoolean(requestBoolean);
     }
 
 }
