@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3aa6499-c0b8-49d2-a480-d9a9604d94c4" name="Default Changelist" comment="" />
+    <list default="true" id="b3aa6499-c0b8-49d2-a480-d9a9604d94c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/AmarpalAmrith/BuzzFizz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AmarpalAmrith/BuzzFizz/Main.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +16,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AmarpalAmrith/BuzzFizz/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="189">
+              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+              <folding>
+                <element signature="e#1009#1010#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,12 +95,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552299024751</updated>
-      <workItem from="1552299044429" duration="1256000" />
+      <workItem from="1552299044429" duration="2708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1256000" />
+    <option name="totallyTimeSpent" value="2708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="804" extended-state="6" />
@@ -133,8 +138,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/AmarpalAmrith/BuzzFizz/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="189">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          <folding>
+            <element signature="e#1009#1010#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

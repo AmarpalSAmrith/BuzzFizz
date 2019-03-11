@@ -4,24 +4,31 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-
-        for (int i = 1; i < 100; i++) {
+        String s = "";
+        for (int i = 1; i <= 105; i++) {
             boolean multipleOf3 = false;
             boolean multipleOf5 = false;
-            if (i % 3 == 0) {
-                multipleOf3 = true;
-            } else if (i % 5 == 0) {
-                multipleOf5 = true;
-            }
-
+            boolean multipleOf7 = false;
+            multipleOf3 = multipleOf(i, 3);
+            multipleOf5 = multipleOf(i, 5);
+            multipleOf7 = multipleOf(i, 7);
+            StringBuilder builder = new StringBuilder();
             if (multipleOf3) {
-                System.out.println("Fizz");
-            } else if (multipleOf5) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
+                builder.append("Fizz");
             }
+            if (multipleOf5) {
+                builder.append("Buzz");
+            }
+            if (multipleOf7) {
+                builder.append("Bang");
+            }
+            if (builder.length() == 0) {
+                builder.append(i);
+            }
+            System.out.println(builder);
         }
+    }
+    private static boolean multipleOf(int numberToTest, int getMultipleOf) {
+        return numberToTest % getMultipleOf == 0;
     }
 }
