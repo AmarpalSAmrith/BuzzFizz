@@ -1,67 +1,63 @@
 package AmarpalAmrith.BuzzFizz;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        String s = "";
-        for (int i = 1; i <= 200; i++) {
-            boolean multipleOf3 = false;
-            boolean multipleOf5 = false;
-            boolean multipleOf7 = false;
-            boolean multipleOf11 = false;
-            boolean multipleOf13 = false;
+        for (int i = 1; i <= 255; i++) {
+
+            List <String> store = new ArrayList<>();
 
             if (i % 3 == 0) {
-                multipleOf3 = true;
+                store.add("Fizz");
             }
 
             if (i % 5 == 0) {
-                multipleOf5 = true;
+                store.add("Buzz");
             }
 
             if (i % 7 == 0) {
-                multipleOf7 = true;
+                store.add("Bang");
             }
 
             if (i % 11 == 0) {
-                multipleOf11 = true;
-            }
-            if (i % 13 == 0){
-                multipleOf13 = true;
+                store.clear();
+                store.add("Bong");
             }
 
-            StringBuilder builder = new StringBuilder();
-
-            if (multipleOf3) {
-                builder.append("Fizz");
-            }
-
-            if (multipleOf5) {
-                builder.append("Buzz");
-            }
-
-            if (multipleOf7) {
-                builder.append("Bang");
-            }
-
-            if (multipleOf11) {
-                builder = new StringBuilder();
-                builder.append("Bong");
-            }
-            if (multipleOf13) {
-                int containsB = builder.indexOf("B");
-                if (containsB > 0) {
-                    builder.insert(containsB, "Fezz");
+            if (i % 13 == 0) {
+                int indexOfItemContainingB = indexOfItemWithSubString(store,"B");
+                if (indexOfItemContainingB != -1) {
+                    store.add(indexOfItemContainingB, "Fezz");
                 } else {
-                    builder.append("Fezz");
+                    store.add("Fezz");
                 }
             }
-            if (builder.length() == 0) {
-                builder.append(i);
+
+            if (i % 17 == 0) {
+                Collections.reverse(store);
             }
 
-            System.out.println(builder);
+
+            if (store.size() == 0) {
+                System.out.println(i);
+            } else {
+                System.out.println(String.join("", store));
+            }
+
         }
+    }
+    
+    private static int indexOfItemWithSubString(List <String> list, String criteria) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).contains(criteria)) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
